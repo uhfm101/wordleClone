@@ -51,6 +51,14 @@
                 <td></td>
                 <td></td>
             </tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
             </tbody>
         </table>
         <div class = "input-container">
@@ -89,7 +97,7 @@
             textBox.remove();
             return;
         }
-d
+
         if(currentGuessNumber >= board.children.length){
             gameOverMessage.textContent = `You lost :( The word was ${answer}.`;
             submitButton.remove("");
@@ -99,26 +107,25 @@ d
     })
 
     function writeGuess(guess) {
-        let matchArray = buildMatchArray(guess) //todo create function that turns words into arrays
+        let matchArray = buildMatchArray(guess)
 
         let currentGuessRow = board.children[currentGuessNumber];
 
         let columns = currentGuessRow.children
 
         for (let i = 0; i < matchArray.length; i++) {
-            let columns = columns[i];
+            let column = columns[i];
             column.textContent = guess[i].toUpperCase();
 
             if (matchArray[i] === 2) {
                 column.classList.add("correct");
             } else if (matchArray[i] === 1) {
-                column.classList.add("correct");
+                column.classList.add("in-word");
             } else {
                 column.classList.add("incorrect");
             }
         }
     }
-
 
     function buildMatchArray(guess) {
         guess = guess.toUpperCase();
@@ -135,10 +142,6 @@ d
                 matchArray[i] = 2;
             }
         }
-;
-
-;
-
 
     for (let i = 0; i < guess.length; i++){
         let letter = guess[i];
