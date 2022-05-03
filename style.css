@@ -65,7 +65,7 @@ td{
     margin: 2px;
 }
 
-.input-conteiner{
+.input-container{
     margin-top: 64px;
 }
 
@@ -89,7 +89,7 @@ button{
     background: #3a3a3c;
 }
 
-.p{
+p{
     font-size: 32px;
-    colro: white;
+    color: white;
 }
